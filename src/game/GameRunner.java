@@ -21,12 +21,6 @@ public class GameRunner {
                 System.out.println(newgame.checkWin());
 
 
-
-
-
-
-
-
                 break;
 
 
