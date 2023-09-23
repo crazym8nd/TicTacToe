@@ -23,57 +23,138 @@ public class GameLogic extends Field {
     }
 
     public void turns() {
-        for (int i = 0; i < 8; i++) {
-            System.out.println("Выберите клетку: 1 - 9 или введите 0 для выхода");
-            printField();
-            Scanner turn = new Scanner(System.in);
-            switch (turn.nextInt()) {
-                case 1:
-                    field[0][0] = player1;
-                    break;
-                case 2:
-                    field[0][1] = player1;
-                    break;
-                case 3:
-                    field[0][2] = player1;
-                    break;
-                case 4:
-                    field[1][0] = player1;
-                    break;
-                case 5:
-                    field[1][1] = player1;
-                    break;
-                case 6:
-                    field[1][2] = player1;
-                    break;
-                case 7:
-                    field[2][0] = player1;
-                    break;
-                case 8:
-                    field[2][1] = player1;
-                    break;
-                case 9:
-                    field[2][2] = player1;
-                    break;
-                case 0:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Вы ввели неверный номер клетки!");
-            }
+        System.out.println("Ход первого ирогка");
+        System.out.println("Выберите клетку: 1 - 9 или введите 0 для выхода");
+        printField();
+        Scanner turn = new Scanner(System.in);
+        switch (turn.nextInt()) {
+            case 1:
+                if (field[0][0] == ' ') field[0][0] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 2:
+                if (field[0][1] == ' ') field[0][1] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 3:
+                if (field[0][2] == ' ') field[0][2] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 4:
+                if (field[1][0] == ' ') field[1][0] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 5:
+                if (field[1][1] == ' ') field[1][1] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 6:
+                if (field[1][2] == ' ') field[1][2] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 7:
+                if (field[2][0] == ' ') field[2][0] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 8:
+                if (field[2][1] == ' ') field[2][1] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 9:
+                if (field[2][2] == ' ') field[2][2] = player1;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 0:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Вы ввели неверный номер клетки!");
         }
+
     }
+
+    public void turns2() {
+        System.out.println("Ход второго игрока");
+        System.out.println("Выберите клетку: 1 - 9 или введите 0 для выхода");
+        printField();
+        Scanner turn = new Scanner(System.in);
+        switch (turn.nextInt()) {
+            case 1:
+                if (field[0][0] == ' ') field[0][0] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 2:
+                if (field[0][1] == ' ') field[0][1] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 3:
+                if (field[0][2] == ' ') field[0][2] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 4:
+                if (field[1][0] == ' ') field[1][0] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 5:
+                if (field[1][1] == ' ') field[1][1] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 6:
+                if (field[1][2] == ' ') field[1][2] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 7:
+                if (field[2][0] == ' ') field[2][0] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 8:
+                if (field[2][1] == ' ') field[2][1] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 9:
+                if (field[2][2] == ' ') field[2][2] = player2;
+                else System.out.println("Выберите другую клетку!");
+                break;
+            case 0:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Вы ввели неверный номер клетки!");
+        }
+
+    }
+
+
     public String checkWin() {
-        if (player1 == 'X') {
-            if (((field[0][0] == player1 && field[0][1] == player1 && field[0][2] == player1) | (field[1][0] == 'X' && field[1][1] == 'X' && field[1][2] == 'X') | (field[2][0] == 'X' && field[2][1] == 'X' && field[2][2] == 'X') | (field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X')) |
-                    ((field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X') | (field[0][1] == 'X' && field[1][1] == 'X' && field[2][1] == 'X') | (field[0][2] == 'X' && field[1][2] == 'X' && field[2][2] == 'X')) |
-                    ((field[0][0] == 'X' && field[1][1] == 'X' && field[2][2] == 'X') | (field[0][2] == 'X' && field[1][1] == 'X' && field[2][0] == 'X'))) {
-                return ("Победа игрока 1!");
-            } else {
-                return ("111111");
-            }
-        }else return ("2222");
+        switch (player1) {
+            case 'X':
+                if (((field[0][0] == 'X' && field[0][1] == 'X' && field[0][2] == 'X') || (field[1][0] == 'X' && field[1][1] == 'X' && field[1][2] == 'X') || (field[2][0] == 'X' && field[2][1] == 'X' && field[2][2] == 'X') || (field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X')) ||
+                        ((field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X') || (field[0][1] == 'X' && field[1][1] == 'X' && field[2][1] == 'X') || (field[0][2] == 'X' && field[1][2] == 'X' && field[2][2] == 'X')) ||
+                        ((field[0][0] == 'X' && field[1][1] == 'X' && field[2][2] == 'X') || (field[0][2] == 'X' && field[1][1] == 'X' && field[2][0] == 'X'))) {
+                    return "Игрок 1 победил!";
+                } else if (((field[0][0] == 'O' && field[0][1] == 'O' && field[0][2] == 'O') || (field[1][0] == 'O' && field[1][1] == 'O' && field[1][2] == 'O') || (field[2][0] == 'O' && field[2][1] == 'O' && field[2][2] == 'O') || (field[0][0] == 'O' && field[1][0] == 'O' && field[2][0] == 'O')) ||
+                        ((field[0][0] == 'O' && field[1][0] == 'O' && field[2][0] == 'O') || (field[0][1] == 'O' && field[1][1] == 'O' && field[2][1] == 'O') || (field[0][2] == 'O' && field[1][2] == 'O' && field[2][2] == 'O')) ||
+                        ((field[0][0] == 'O' && field[1][1] == 'O' && field[2][2] == 'O') || (field[0][2] == 'O' && field[1][1] == 'O' && field[2][0] == 'O'))) {
+                    return "Игрок 2 победил!";
+                }
+
+
+            case 'O':
+                if (((field[0][0] == 'X' && field[0][1] == 'X' && field[0][2] == 'X') || (field[1][0] == 'X' && field[1][1] == 'X' && field[1][2] == 'X') || (field[2][0] == 'X' && field[2][1] == 'X' && field[2][2] == 'X') || (field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X')) ||
+                        ((field[0][0] == 'X' && field[1][0] == 'X' && field[2][0] == 'X') || (field[0][1] == 'X' && field[1][1] == 'X' && field[2][1] == 'X') || (field[0][2] == 'X' && field[1][2] == 'X' && field[2][2] == 'X')) ||
+                        ((field[0][0] == 'X' && field[1][1] == 'X' && field[2][2] == 'X') || (field[0][2] == 'X' && field[1][1] == 'X' && field[2][0] == 'X'))) {
+                    return "Игрок 2 победил!";
+                } else if (((field[0][0] == 'O' && field[0][1] == 'O' && field[0][2] == 'O') || (field[1][0] == 'O' && field[1][1] == 'O' && field[1][2] == 'O') || (field[2][0] == 'O' && field[2][1] == 'O' && field[2][2] == 'O') || (field[0][0] == 'O' && field[1][0] == 'O' && field[2][0] == 'O')) ||
+                        ((field[0][0] == 'O' && field[1][0] == 'O' && field[2][0] == 'O') || (field[0][1] == 'O' && field[1][1] == 'O' && field[2][1] == 'O') || (field[0][2] == 'O' && field[1][2] == 'O' && field[2][2] == 'O')) ||
+                        ((field[0][0] == 'O' && field[1][1] == 'O' && field[2][2] == 'O') || (field[0][2] == 'O' && field[1][1] == 'O' && field[2][0] == 'O'))) {
+                    return "Игрок 1 победил!";
+                }
+                break;
+        }
+        return "  ";
     }
 }
+
+
 
 

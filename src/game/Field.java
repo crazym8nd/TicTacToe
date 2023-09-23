@@ -25,5 +25,17 @@ public class Field {
         System.out.println("--+---+--");
         System.out.println("7" + " | " + "8" + " | " + "9");
     }
+    public boolean gameEnds() {
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                if(field[i][j] == ' ') return false;
+            }
+
+        }
+        printField();
+        System.out.println("Ничья!");
+        return true;
+
+    }
 
 }
