@@ -2,8 +2,8 @@ package game;
 
 import java.util.Scanner;
 
-public class GameLogic extends Field {
-    Field newgame = new Field();
+public class GameLogic1 extends Field1 {
+    Field1 newgame = new Field1();
     char player1;
     char player2;
 

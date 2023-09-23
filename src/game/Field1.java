@@ -1,6 +1,6 @@
 package game;
 
-public class Field {
+public class Field1 {
     char[][] field = new char[][]{{' ', ' ', ' '},
                                   {' ', ' ', ' '},
                                   {' ', ' ', ' '}};
